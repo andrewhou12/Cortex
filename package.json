@@ -2,11 +2,25 @@
   "name": "cortexapp",
   "version": "1.0.0",
   "main": "index.js",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "electron"
+  ],
   "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\" \"wait-on tcp:3000 && npm run dev -w electron\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/node": "^24.5.1",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "wait-on": "^9.0.0"
+  }
 }
