@@ -1,0 +1,18 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\" \"wait-on tcp:3000 && npm run dev -w electron\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "electron": "^38.1.2",
+    "wait-on": "^9.0.0"
+  }
+}

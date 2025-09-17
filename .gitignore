@@ -1,0 +1,47 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Build output
+dist/
+build/
+.next/
+out/
+electron/dist
+electron/build
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# SQLite database (optional: keep if you want it versioned)
+*.sqlite
+*.db
+
+# Coverage / test
+coverage/
+.nyc_output/
+
+# Misc cache
+.cache/
+.next/
+turbo/
