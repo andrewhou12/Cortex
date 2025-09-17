@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: transparent;
   --foreground: #171717;
 }
 
@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;   /* actual color comes from ::before */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Dark translucent background */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* shorthand for top/left/right/bottom:0 */
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1; /* sits behind the content */
+}
+
+/* Gradient rim overlay */
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* thickness of rim */
+  background: linear-gradient(
+    169deg,
+    rgba(255, 255, 255, 0.17) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.17) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
